@@ -1,0 +1,78 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Build
+description: FIXME
+stability: prototype
+strictProperties: true
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of build
+    readOnly: true
+    format: uuid
+    type:
+    - string
+  name:
+    description: unique name of build
+    readOnly: true
+    type:
+    - string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/build#/definitions/id"
+    - "$ref": "/schemata/build#/definitions/name"
+  created_at:
+    description: when build was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when build was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new build.
+  href: "/builds"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing build.
+  href: "/builds/{(%2Fschemata%2Fbuild%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing build.
+  href: "/builds/{(%2Fschemata%2Fbuild%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing builds.
+  href: "/builds"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing build.
+  href: "/builds/{(%2Fschemata%2Fbuild%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/build#/definitions/created_at"
+  id:
+    "$ref": "/schemata/build#/definitions/id"
+  name:
+    "$ref": "/schemata/build#/definitions/name"
+  updated_at:
+    "$ref": "/schemata/build#/definitions/updated_at"
+id: schemata/build

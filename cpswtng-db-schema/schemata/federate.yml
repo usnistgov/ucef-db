@@ -1,0 +1,78 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Federate
+description: FIXME
+stability: prototype
+strictProperties: true
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of federate
+    readOnly: true
+    format: uuid
+    type:
+    - string
+  name:
+    description: unique name of federate
+    readOnly: true
+    type:
+    - string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/federate#/definitions/id"
+    - "$ref": "/schemata/federate#/definitions/name"
+  created_at:
+    description: when federate was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when federate was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new federate.
+  href: "/federates"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing federate.
+  href: "/federates/{(%2Fschemata%2Ffederate%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing federate.
+  href: "/federates/{(%2Fschemata%2Ffederate%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing federates.
+  href: "/federates"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing federate.
+  href: "/federates/{(%2Fschemata%2Ffederate%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/federate#/definitions/created_at"
+  id:
+    "$ref": "/schemata/federate#/definitions/id"
+  name:
+    "$ref": "/schemata/federate#/definitions/name"
+  updated_at:
+    "$ref": "/schemata/federate#/definitions/updated_at"
+id: schemata/federate

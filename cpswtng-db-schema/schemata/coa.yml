@@ -1,0 +1,78 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Coa
+description: FIXME
+stability: prototype
+strictProperties: true
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of coa
+    readOnly: true
+    format: uuid
+    type:
+    - string
+  name:
+    description: unique name of coa
+    readOnly: true
+    type:
+    - string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/coa#/definitions/id"
+    - "$ref": "/schemata/coa#/definitions/name"
+  created_at:
+    description: when coa was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when coa was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new coa.
+  href: "/coas"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing coa.
+  href: "/coas/{(%2Fschemata%2Fcoa%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing coa.
+  href: "/coas/{(%2Fschemata%2Fcoa%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing coas.
+  href: "/coas"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing coa.
+  href: "/coas/{(%2Fschemata%2Fcoa%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/coa#/definitions/created_at"
+  id:
+    "$ref": "/schemata/coa#/definitions/id"
+  name:
+    "$ref": "/schemata/coa#/definitions/name"
+  updated_at:
+    "$ref": "/schemata/coa#/definitions/updated_at"
+id: schemata/coa

@@ -1,0 +1,9 @@
+{
+ "description": "CPSWT-NG DB schema definition",
+ "id": "cpswt-ng-db-schema",
+ "links": [{
+   "href": "https://api.cpswt-ng.isis.vanderbilt.edu/",
+   "rel": "self"
+ }],
+ "title": "CPSWT-NG DB schema"
+}

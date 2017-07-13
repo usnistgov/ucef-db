@@ -1,0 +1,78 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: FIXME - Interaction
+description: FIXME
+stability: prototype
+strictProperties: true
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of interaction
+    readOnly: true
+    format: uuid
+    type:
+    - string
+  name:
+    description: unique name of interaction
+    readOnly: true
+    type:
+    - string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/interaction#/definitions/id"
+    - "$ref": "/schemata/interaction#/definitions/name"
+  created_at:
+    description: when interaction was created
+    format: date-time
+    type:
+    - string
+  updated_at:
+    description: when interaction was updated
+    format: date-time
+    type:
+    - string
+links:
+- description: Create a new interaction.
+  href: "/interactions"
+  method: POST
+  rel: create
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Create
+- description: Delete an existing interaction.
+  href: "/interactions/{(%2Fschemata%2Finteraction%23%2Fdefinitions%2Fidentity)}"
+  method: DELETE
+  rel: destroy
+  title: Delete
+- description: Info for existing interaction.
+  href: "/interactions/{(%2Fschemata%2Finteraction%23%2Fdefinitions%2Fidentity)}"
+  method: GET
+  rel: self
+  title: Info
+- description: List existing interactions.
+  href: "/interactions"
+  method: GET
+  rel: instances
+  title: List
+- description: Update an existing interaction.
+  href: "/interactions/{(%2Fschemata%2Finteraction%23%2Fdefinitions%2Fidentity)}"
+  method: PATCH
+  rel: update
+  schema:
+    properties: {}
+    type:
+    - object
+  title: Update
+properties:
+  created_at:
+    "$ref": "/schemata/interaction#/definitions/created_at"
+  id:
+    "$ref": "/schemata/interaction#/definitions/id"
+  name:
+    "$ref": "/schemata/interaction#/definitions/name"
+  updated_at:
+    "$ref": "/schemata/interaction#/definitions/updated_at"
+id: schemata/interaction

@@ -1,0 +1,1090 @@
+{
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "build": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Build",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of build",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of build",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/build/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/build/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when build was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when build was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new build.",
+          "href": "/builds",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing build.",
+          "href": "/builds/{(%23%2Fdefinitions%2Fbuild%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing build.",
+          "href": "/builds/{(%23%2Fdefinitions%2Fbuild%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing builds.",
+          "href": "/builds",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing build.",
+          "href": "/builds/{(%23%2Fdefinitions%2Fbuild%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/build/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/build/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/build/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/build/definitions/updated_at"
+        }
+      }
+    },
+    "coa": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Coa",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of coa",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of coa",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/coa/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/coa/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when coa was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when coa was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new coa.",
+          "href": "/coas",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing coa.",
+          "href": "/coas/{(%23%2Fdefinitions%2Fcoa%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing coa.",
+          "href": "/coas/{(%23%2Fdefinitions%2Fcoa%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing coas.",
+          "href": "/coas",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing coa.",
+          "href": "/coas/{(%23%2Fdefinitions%2Fcoa%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/coa/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/coa/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/coa/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/coa/definitions/updated_at"
+        }
+      }
+    },
+    "execution": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Execution",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of execution",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of execution",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/execution/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/execution/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when execution was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when execution was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new execution.",
+          "href": "/executions",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing execution.",
+          "href": "/executions/{(%23%2Fdefinitions%2Fexecution%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing execution.",
+          "href": "/executions/{(%23%2Fdefinitions%2Fexecution%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing executions.",
+          "href": "/executions",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing execution.",
+          "href": "/executions/{(%23%2Fdefinitions%2Fexecution%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/execution/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/execution/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/execution/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/execution/definitions/updated_at"
+        }
+      }
+    },
+    "experiment": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Experiment",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of experiment",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of experiment",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/experiment/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/experiment/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when experiment was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when experiment was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new experiment.",
+          "href": "/experiments",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing experiment.",
+          "href": "/experiments/{(%23%2Fdefinitions%2Fexperiment%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing experiment.",
+          "href": "/experiments/{(%23%2Fdefinitions%2Fexperiment%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing experiments.",
+          "href": "/experiments",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing experiment.",
+          "href": "/experiments/{(%23%2Fdefinitions%2Fexperiment%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/experiment/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/experiment/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/experiment/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/experiment/definitions/updated_at"
+        }
+      }
+    },
+    "federate": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Federate",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of federate",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of federate",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/federate/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/federate/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when federate was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when federate was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new federate.",
+          "href": "/federates",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing federate.",
+          "href": "/federates/{(%23%2Fdefinitions%2Ffederate%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing federate.",
+          "href": "/federates/{(%23%2Fdefinitions%2Ffederate%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing federates.",
+          "href": "/federates",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing federate.",
+          "href": "/federates/{(%23%2Fdefinitions%2Ffederate%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/federate/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/federate/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/federate/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/federate/definitions/updated_at"
+        }
+      }
+    },
+    "interaction": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Interaction",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of interaction",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of interaction",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/interaction/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/interaction/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when interaction was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when interaction was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new interaction.",
+          "href": "/interactions",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing interaction.",
+          "href": "/interactions/{(%23%2Fdefinitions%2Finteraction%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing interaction.",
+          "href": "/interactions/{(%23%2Fdefinitions%2Finteraction%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing interactions.",
+          "href": "/interactions",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing interaction.",
+          "href": "/interactions/{(%23%2Fdefinitions%2Finteraction%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/interaction/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/interaction/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/interaction/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/interaction/definitions/updated_at"
+        }
+      }
+    },
+    "organization": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Organization",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of organization",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of organization",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/organization/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/organization/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when organization was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when organization was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new organization.",
+          "href": "/organizations",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing organization.",
+          "href": "/organizations/{(%23%2Fdefinitions%2Forganization%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing organization.",
+          "href": "/organizations/{(%23%2Fdefinitions%2Forganization%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing organizations.",
+          "href": "/organizations",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing organization.",
+          "href": "/organizations/{(%23%2Fdefinitions%2Forganization%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/organization/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/organization/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/organization/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/organization/definitions/updated_at"
+        }
+      }
+    },
+    "project": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Project",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of project",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of project",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/project/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/project/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when project was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when project was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new project.",
+          "href": "/projects",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing project.",
+          "href": "/projects/{(%23%2Fdefinitions%2Fproject%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing project.",
+          "href": "/projects/{(%23%2Fdefinitions%2Fproject%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing projects.",
+          "href": "/projects",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing project.",
+          "href": "/projects/{(%23%2Fdefinitions%2Fproject%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/project/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/project/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/project/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/project/definitions/updated_at"
+        }
+      }
+    },
+    "user": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - User",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of user",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of user",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/user/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/user/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when user was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when user was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new user.",
+          "href": "/users",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing users.",
+          "href": "/users",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/user/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/user/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/user/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/user/definitions/updated_at"
+        }
+      }
+    }
+  },
+  "properties": {
+    "build": {
+      "$ref": "#/definitions/build"
+    },
+    "coa": {
+      "$ref": "#/definitions/coa"
+    },
+    "execution": {
+      "$ref": "#/definitions/execution"
+    },
+    "experiment": {
+      "$ref": "#/definitions/experiment"
+    },
+    "federate": {
+      "$ref": "#/definitions/federate"
+    },
+    "interaction": {
+      "$ref": "#/definitions/interaction"
+    },
+    "organization": {
+      "$ref": "#/definitions/organization"
+    },
+    "project": {
+      "$ref": "#/definitions/project"
+    },
+    "user": {
+      "$ref": "#/definitions/user"
+    }
+  },
+  "description": "CPSWT-NG DB schema definition",
+  "id": "cpswt-ng-db-schema",
+  "links": [
+    {
+      "href": "https://api.cpswt-ng.isis.vanderbilt.edu/",
+      "rel": "self"
+    }
+  ],
+  "title": "CPSWT-NG DB schema"
+}
